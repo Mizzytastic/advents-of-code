@@ -4,7 +4,7 @@ def part1solver(line: str) -> int:
     return sum(map(lambda ch: 1 if ch == "(" else -1, line))
 
 def part1() -> None:
-    with open("../input/day1test.txt") as file:
+    with open("../input/day1test_1.txt") as file:
         for test, expected in (line.strip().split(":") for line in file):
             assert part1solver(test) == int(expected)
 

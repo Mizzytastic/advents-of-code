@@ -9,7 +9,7 @@ def part1solver(packages: list[str]) -> int:
     return paper
 
 def part1() -> None:
-    with open("../input/day2test.txt") as file:
+    with open("../input/day2test_1.txt") as file:
         for test, expected in (line.strip().split(":") for line in file):
             assert part1solver([test]) == int(expected)
 
