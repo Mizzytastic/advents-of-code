@@ -7,11 +7,11 @@ direction_map: dict[str, tuple[int, int]] = {
     "<": (-1, 0)
 }
 
-def multi_walkers(movements: str, walkers: int = 1) -> int():
+def multi_walkers(movements: str, walkers: int = 1) -> int:
 
     class Walker():
 
-        def __init__(self):
+        def __init__(self) -> None:
             self.current: tuple[int, int] = (0, 0)
             self.visited: set[tuple[int, int]] = {self.current}
 
@@ -24,7 +24,7 @@ def multi_walkers(movements: str, walkers: int = 1) -> int():
         walker.current = (x + dx, y + dy)
         walker.visited.add(walker.current)
 
-    result = len(functools.reduce(lambda visited, walker: visited | walker.visited, walker_list, set()))
+    result = len(functools.reduce(lambda visited, walker: visited | walker.visited, walker_list, set[tuple[int, int]]()))
     return result
 
 def part1solver(movements: str) -> int:
