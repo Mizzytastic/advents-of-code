@@ -14,7 +14,7 @@ def prefix_plus_number_md5(prefix: str) -> Generator[tuple[int, hash]]:
         yield (suffix_int, full_md5)
         suffix_int += 1
 
-def find_md5_prefix_and_num(prefix: str, hash_prefix: str) -> int:
+def find_md5_with_prefix(prefix: str, hash_prefix: str) -> int:
     for n, md5 in prefix_plus_number_md5(prefix):
         hashed = md5.digest()
 
@@ -24,7 +24,7 @@ def find_md5_prefix_and_num(prefix: str, hash_prefix: str) -> int:
     raise Exception("Unreachable code")
 
 def part1solver(prefix: str) -> int:
-    return find_md5_prefix_and_num(prefix, "00000")
+    return find_md5_with_prefix(prefix, "00000")
 
 def part1() -> None:
     with open("../input/day4test_1.txt") as file:
@@ -36,7 +36,7 @@ def part1() -> None:
             print(part1solver(line))
 
 def part2solver(prefix: str) -> int:
-    return find_md5_prefix_and_num(prefix, "000000")
+    return find_md5_with_prefix(prefix, "000000")
 
 def part2() -> None:
     with open("../input/day4.txt") as file:
